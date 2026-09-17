@@ -6,7 +6,7 @@ class Pokemon
 {
 public:
 	//Pokemon() { cout << "포켓몬 기본 생성자\n"; }
-	~Pokemon(){ cout << "포켓몬 객체 소멸\n"; }
+	virtual ~Pokemon(){ cout << "포켓몬 객체 소멸\n"; }
 	virtual void attack() const { cout << "포켓몬 몸통박치기" << endl; }
 };
 class Pikachu : public Pokemon
