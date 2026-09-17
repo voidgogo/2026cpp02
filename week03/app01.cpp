@@ -5,7 +5,7 @@ using namespace std;
 class Pokemon
 {
 public:
-	void attack() const { cout << "포켓몬 몸통박치기" << endl; }
+	virtual void attack() const { cout << "포켓몬 몸통박치기" << endl; }
 };
 class Pikachu : public Pokemon
 {
