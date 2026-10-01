@@ -1,45 +1,37 @@
 ﻿#include <iostream>
 #include <string>
+#include <typeinfo> 
 using namespace std;
 
-class Pokemon
-{
+class Animal {
 public:
-	//Pokemon() { cout << "피카츄 기본생성자~\n"; }
-	virtual ~Pokemon() { cout << "포켓몬 소멸자!\n"; }
-	//void attack() const { cout << "포켓몬 몸통박치기" << endl; }
-	virtual void attack() const { cout << "포켓몬 몸통박치기" << endl; }
+	//void makeSound() { cout << "동물이 소리를 냅니다\n"; }
+	virtual void makeSound() { cout << "동물이 소리를 냅니다\n"; }
 };
-class Pikachu : public Pokemon
-{
+class Dog : public Animal {
 public:
-	//Pikachu() { cout << "피카츄 기본생성자~\n"; }
-	~Pikachu() { cout << "피카츄 소멸자!\n"; }
-	void attack() const { cout << "피카츄 10만 볼트" << endl; }
+	void makeSound() { cout << "멍멍!\n"; }
 };
-class Squirtle : public Pokemon
-{
+class Cat : public Animal {
 public:
-	//Squirtle() { cout << "꼬부기 기본생성자~\n"; }
-	~Squirtle() { cout << "꼬부기 소멸자!\n"; }
-	void attack() const { cout << "꼬부기 하이드로펌프" << endl; }
+	void makeSound() { cout << "냐옹~\n"; }
 };
+
 int main()
 {
-	Pokemon* pokemons[4];
-	
-	pokemons[0] = new Squirtle();
-	pokemons[1] = new Pikachu();
-	pokemons[2] = new Pokemon();
-	pokemons[3] = new Pokemon();
+	Animal* p = new Animal();
+	p->makeSound();
+	delete p;
+	p = nullptr;
 
-	for (int i = 0; i < 4; i++) {
-		pokemons[i]->attack();
-	}
+	p = new Dog();
+	p->makeSound();
 
-	for (int i = 0; i < 4; i++) {
-		delete pokemons[i];
-		pokemons[i] = nullptr;
-	}
+
+	Dog* pd = (Dog*)p;  // Down Casting. Old C style
+	pd->makeSound();
+
+	delete p;
+	p = nullptr;
 	return 0;
 }
