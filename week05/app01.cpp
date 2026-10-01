@@ -32,9 +32,11 @@ int main()
 	//pd->makeSound();
 
 	//Cat* pc = (Cat*)p;  // Down Casting. Old C style. Danger!
-	Cat* pc = dynamic_cast<Cat*>(p);  // Down Casting. Morder C++ style.
-	cout << pc << '\n';
-	pc->makeSound();
+	//Cat* pc = dynamic_cast<Cat*>(p);  // Down Casting. Modern C++ style.
+	//cout << pc << '\n';
+	Dog* pd = dynamic_cast<Dog*>(p);  // Down Casting. Modern C++ style.
+	cout << pd << '\n';
+	pd->makeSound();
 
 	delete p;
 	p = nullptr;
