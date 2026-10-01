@@ -31,7 +31,9 @@ int main()
 	//Dog* pd = (Dog*)p;  // Down Casting. Old C style
 	//pd->makeSound();
 
-	Cat* pc = (Cat*)p;  // Down Casting. Old C style. Danger!
+	//Cat* pc = (Cat*)p;  // Down Casting. Old C style. Danger!
+	Cat* pc = dynamic_cast<Cat*>(p);  // Down Casting. Morder C++ style.
+	cout << pc << '\n';
 	pc->makeSound();
 
 	delete p;
