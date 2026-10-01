@@ -28,8 +28,11 @@ int main()
 	p->makeSound();
 
 
-	Dog* pd = (Dog*)p;  // Down Casting. Old C style
-	pd->makeSound();
+	//Dog* pd = (Dog*)p;  // Down Casting. Old C style
+	//pd->makeSound();
+
+	Cat* pc = (Cat*)p;  // Down Casting. Old C style. Danger!
+	pc->makeSound();
 
 	delete p;
 	p = nullptr;
