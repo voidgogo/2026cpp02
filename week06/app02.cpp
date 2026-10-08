@@ -4,11 +4,11 @@ using namespace std;
 
 class DormitoryStudent {
 public:
-	void warn() { cout << "ë²Œì ë¶€ì—¬!\n"; }
+	void warn() { cout << "¹úÁ¡ºÎ¿©!\n"; }
 };
 class UndergraduateStudent {
 public:
-	void warn() { cout << "í•™ì‚¬ê²½ê³ !\n"; }
+	void warn() { cout << "ÇÐ»ç°æ°í!\n"; }
 };
 class UndergraduateDormitoryStudent : public DormitoryStudent, public UndergraduateStudent {
 
@@ -17,6 +17,8 @@ class UndergraduateDormitoryStudent : public DormitoryStudent, public Undergradu
 int main()
 {
 	UndergraduateDormitoryStudent uds;
-	uds.warn();
+	uds.DormitoryStudent::warn();
+	uds.UndergraduateStudent::warn();
 	return 0;
+
 }
