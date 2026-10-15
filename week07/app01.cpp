@@ -37,7 +37,8 @@ int main() {
 	cout << c1.getReal() << "+" << c1.getImaginary() << "i\n";
 	cout << c2.getReal() << "+" << c2.getImaginary() << "i\n";
 
-	Complex c3 = c1 + c2;  // Complex c3 = c1.operator+(c2);
+	//Complex c3 = c1 + c2;  // Complex c3 = c1.operator+(c2);
+	Complex c3 = operator+(c1, c2);
 	cout << c3.getReal() << "+" << c3.getImaginary() << "i\n";
 	
 	//Complex c4 = c3++;
