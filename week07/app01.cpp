@@ -15,8 +15,9 @@ public:
 		this->real = this->real + 1; // 증가
 		return backup;
 	}
-	Complex operator++() {  // 전위연산
-		return Complex(++this->real, this->imaginary);
+	Complex& operator++() {  // 전위연산(개선)
+		this->real++;
+		return *this;
 	}
 	int getReal() const {
 		return real;
