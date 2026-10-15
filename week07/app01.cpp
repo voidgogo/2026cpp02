@@ -20,6 +20,11 @@ public:
 	Complex(int real, int imaginary) : real(real), imaginary(imaginary){
 	}
 
+	//Complex operator+(Complex left, Complex right) {
+	Complex operator+(Complex right) {
+		return Complex(this->real + right.real, this->imaginary + right.imaginary);
+	}
+
 	int getReal() const {
 		return real;
 	}
@@ -35,7 +40,7 @@ int main() {
 	cout << c1.getReal() << "+" << c1.getImaginary() << "i\n";
 	cout << c2.getReal() << "+" << c2.getImaginary() << "i\n";
 	cout << a + b << '\n';
-	Complex c3 = c1 + c2;
-	//cout << c1 + c2 << "i\n";
+	Complex c3 = c1 + c2;  // fixed
+	cout << c3.getReal() << "+" << c3.getImaginary() << "i\n";
 	return 0;
 }
