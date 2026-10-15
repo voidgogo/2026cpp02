@@ -20,7 +20,7 @@ public:
 		return backup;
 	}
 	Complex operator++() {  // 전위연산
-
+		return Complex(++this->real, this->imaginary);
 	}
 
 	int getReal() const {
@@ -40,7 +40,8 @@ int main() {
 	Complex c3 = c1 + c2;  // Complex c3 = c1.operator+(c2);
 	cout << c3.getReal() << "+" << c3.getImaginary() << "i\n";
 	
-	Complex c4 = c3++;
+	//Complex c4 = c3++;
+	Complex c4 = ++c3;
 	cout << c4.getReal() << "+" << c4.getImaginary() << "i\n";
 	cout << c3.getReal() << "+" << c3.getImaginary() << "i\n";
 
