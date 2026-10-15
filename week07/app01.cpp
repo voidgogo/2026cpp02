@@ -10,13 +10,13 @@ public:
 	}
 	Complex(int real, int imaginary) : real(real), imaginary(imaginary){
 	}
-	Complex operator++(int) {  // 매개변수 자리의 int 타입 키워드는 후위연산자를 의미하는 tag
-		Complex backup(this->real, this->imaginary);  // 이전 상태 백업
-		this->real = this->real + 1; // 증가
+	Complex operator++(int) {  // 개선 버전
+		Complex backup(real, imaginary);
+		real = real + 1; // 증가
 		return backup;
 	}
-	Complex& operator++() {  // 전위연산(개선)
-		this->real++;
+	Complex& operator++() {  // 전위연산(개선, 복소수 객체 생성x)
+		real++;
 		return *this;
 	}
 	int getReal() const {
