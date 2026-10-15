@@ -10,10 +10,6 @@ public:
 	}
 	Complex(int real, int imaginary) : real(real), imaginary(imaginary){
 	}
-	//Complex operator+(Complex left, Complex right) {
-	Complex operator+(Complex right) {  // 더하기 연산자 오버로딩
-		return Complex(this->real + right.real, this->imaginary + right.imaginary);
-	}
 	Complex operator++(int) {  // 매개변수 자리의 int 타입 키워드는 후위연산자를 의미하는 tag
 		Complex backup(this->real, this->imaginary);  // 이전 상태 백업
 		this->real = this->real + 1; // 증가
@@ -22,7 +18,6 @@ public:
 	Complex operator++() {  // 전위연산
 		return Complex(++this->real, this->imaginary);
 	}
-
 	int getReal() const {
 		return real;
 	}
@@ -30,6 +25,10 @@ public:
 		return imaginary;
 	}
 };
+
+Complex operator+(Complex left, Complex right) {  // 비멤버 함수 연산자 오버로딩
+	return Complex(left.getReal() + right.getReal(), left.getImaginary() + right.getImaginary());
+}
 
 int main() {
 	Complex c1(7, 2);
