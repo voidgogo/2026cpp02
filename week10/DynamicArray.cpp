@@ -1,4 +1,5 @@
 #include "DynamicArray.h"
+#include "MyException.h"
 
 DynamicArray::DynamicArray(int size)
 {
@@ -22,13 +23,13 @@ void DynamicArray::setValue(int idx, int value)
 	if (idx >= 0 && idx < getSize())
 		ptr[idx] = value;
 	else
-		throw "1000: 할당 오류. 인덱스 범위를 벗어남\n";
+		throw MyException(1000, "할당 오류. 인덱스 범위를 벗어남", this);
 }
 
 int DynamicArray::getValue(int idx) const
 {
 	if (idx >= 0 && idx < getSize())
 		return ptr[idx];
-	throw "1002: 호출 오류. 인덱스 범위를 벗어남\n";
+	throw MyException(1002, "호출 오류.인덱스 범위를 벗어남", this);
 }
 
