@@ -4,9 +4,9 @@
 using namespace std;
 
 int main() {
-	DynamicArray da1(5);
+	try {	
+		DynamicArray da1(5);
 
-	try {		
 		da1.setValue(0, 99);
 		da1.setValue(4, -77);
 		//da1.setValue(9, 3);  // exception!

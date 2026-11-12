@@ -1,10 +1,13 @@
 #include "DynamicArray.h"
 #include "MyException.h"
+#include <iostream>
+using namespace std;
 
 DynamicArray::DynamicArray(int size)
 {
 	this->size = size;
 	ptr = new int[size];  // 悼利 且寸 (heap memory)
+	std::cout << this << " : 按眉 积己\n";
 	throw MyException(3000, "皋葛府 坷幅", this);
 }
 
@@ -12,6 +15,7 @@ DynamicArray::~DynamicArray()
 {
 	delete ptr;
 	ptr = nullptr;
+	std::cout << this << " : 按眉 家戈!\n";
 }
 
 int DynamicArray::getSize() const
