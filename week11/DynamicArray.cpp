@@ -8,11 +8,11 @@ DynamicArray::DynamicArray(int size)
 	try {
 		this->size = size;
 		ptr = new int[size];  // 동적 할당 (heap memory)		
-		throw MyException(3000, "메모리 오류", this);
+		throw MyException(3000, "메모리 오류", this);  // 예외 강제 생성
 		cout << "출력 안됨\n";
 	}catch(...){
 		cout << "생성자 안쪽 catch 구문 진입\n";
-		delete ptr;
+		delete[] ptr;
 		ptr = nullptr;
 		throw;
 	}
@@ -21,7 +21,7 @@ DynamicArray::DynamicArray(int size)
 
 DynamicArray::~DynamicArray()
 {
-	delete ptr;
+	delete[] ptr;
 	ptr = nullptr;
 	std::cout << this << " : 객체 소멸!\n";
 }

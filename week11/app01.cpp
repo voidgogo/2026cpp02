@@ -6,6 +6,7 @@ using namespace std;
 int main() {
 	try {	
 		DynamicArray da1(5);
+		//DynamicArray* da2 = new DynamicArray(4);
 
 		da1.setValue(0, 99);
 		da1.setValue(4, -77);
