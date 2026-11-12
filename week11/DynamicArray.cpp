@@ -5,10 +5,18 @@ using namespace std;
 
 DynamicArray::DynamicArray(int size)
 {
-	this->size = size;
-	ptr = new int[size];  // 동적 할당 (heap memory)
-	std::cout << this << " : 객체 생성\n";
-	throw MyException(3000, "메모리 오류", this);
+	try {
+		this->size = size;
+		ptr = new int[size];  // 동적 할당 (heap memory)		
+		throw MyException(3000, "메모리 오류", this);
+		cout << "출력 안됨\n";
+	}catch(...){
+		cout << "생성자 안쪽 catch 구문 진입\n";
+		delete ptr;
+		ptr = nullptr;
+		throw;
+	}
+	cout << this << " : 객체 생성\n";
 }
 
 DynamicArray::~DynamicArray()
