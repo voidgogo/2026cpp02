@@ -1,24 +1,22 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
 
-template <typename U>
-void printInfo(U data) {
-    cout << data << '\n';
-    cout << "General Template\n";
+// template overloading
+template <typename T>
+void add(T a)
+{
+    cout << a << '\n';
 }
 
-template<>
-void printInfo<const char*>(const char* data) {
-    cout << data << '\n';
-    cout << "Specialization Template\n";
-    cout << strlen(data) << '\n';
+template <typename T>
+void add(T a, T b)
+{
+    cout << a << " + " << b << " = " << a+b << '\n';
 }
 
 int main()
 {
-    printInfo(55);
-    printInfo(2.71);
-    printInfo("Hi C++");
+    add(9);
+    add(7.1, 9.8);
     return 0;
 }
