@@ -1,18 +1,4 @@
-#include <iostream>
-using namespace std;
-
-// template overloading
-template <typename T>
-void add(T a)
-{
-    cout << a << '\n';
-}
-
-template <typename T>
-void add(T a, T b)
-{
-    cout << a << " + " << b << " = " << a+b << '\n';
-}
+#include "add.h"
 
 int main()
 {
