@@ -61,10 +61,10 @@ int main()
     //Stack<int> stack(10);
     Pokemon* pikachu = new Pokemon(100);
     Pokemon* mu = new Pokemon(120);
-    Stack<Pokemon> pokemons(2);
+    Stack<Pokemon*> pokemons(2);
 
-    pokemons.push(*pikachu);
-    pokemons.push(*mu);
+    pokemons.push(pikachu);
+    pokemons.push(mu);
 
     Stack<int> stack(5);
     stack.push(15);
