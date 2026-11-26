@@ -2,6 +2,17 @@
 #include <cassert>
 using namespace std;
 
+class Pokemon {
+public:
+    int hp;
+    Pokemon() :hp(0) {  // default constructor
+        cout << "포켓몬 객체 생성(기본 생성자)\n";
+    }
+    Pokemon(int hp) : hp(hp) {  // parameter constructor
+        cout << "포켓몬 객체 생성(매개변수 생성자)\n";
+    }
+};
+
 template <typename T>
 class Stack
 {
@@ -48,12 +59,25 @@ public:
 int main()
 {
     //Stack<int> stack(10);
-    Stack<int> stack(3);
+    Pokemon* pikachu = new Pokemon(100);
+    Pokemon* mu = new Pokemon(120);
+    Stack<Pokemon> pokemons(2);
+
+    pokemons.push(*pikachu);
+    pokemons.push(*mu);
+
+    Stack<int> stack(5);
     stack.push(15);
     stack.push(-7);
     stack.push(7);
     stack.push(8);
     cout << stack.pop() << endl;
     cout << stack.pop();
+
+    delete pikachu;
+    pikachu = nullptr;
+    delete mu;
+    mu = nullptr;
+
     return 0;
 }
