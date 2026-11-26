@@ -8,11 +8,11 @@ int main()
 {
     string data;
 
-    ifstream inStrm("pokemons.txt");
+    ifstream inStrm("pokemon.txt");  // 해당파일 존재 하지 않음
     if (!inStrm.is_open())
     {
         cout << "pokemons.txt을 열 수 없습니다.";
-        assert(false);
+        assert(false);  // 프로그램 중단
     }
     for (int i = 1; i <= 2; i++)
     {
