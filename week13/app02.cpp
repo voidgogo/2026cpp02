@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <cassert>
+#include <string>
 using namespace std;
 
 int main()
 {
-    int data;
+    string data;
 
     ifstream inStrm("pokemons.txt");
     if (!inStrm.is_open())
