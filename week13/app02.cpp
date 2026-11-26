@@ -8,7 +8,7 @@ int main()
 {
     string data;
 
-    ifstream inStrm("pokemon.txt");  // 해당파일 존재 하지 않음
+    ifstream inStrm("pokemons.txt", ios::in);  // text 읽기모드, 기본값이라 생략 가능
     if (!inStrm.is_open())
     {
         cout << "pokemons.txt을 열 수 없습니다.";
