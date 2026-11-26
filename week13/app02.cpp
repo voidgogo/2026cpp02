@@ -5,30 +5,14 @@ using namespace std;
 
 int main()
 {
-    char ch;
-
-    ifstream istr;
-    ofstream ostr;
-
-    istr.open("pokemons.txt", ios::in);
-    if (!istr.is_open())
-    {
-        cout << "pokemons.txt을 열 수 없습니다." << endl;
-        assert(false);
-    }
-    ostr.open("pokemonsReplica.txt", ios::out);
+    ofstream ostr("dl.txt", ios::out | ios::app);  // 쓰기 및 추가
     if (!ostr.is_open())
     {
-        cout << "pokemonsReplica.txt" << endl;
+        cout << "dl.txt" << endl;
         assert(false);
     }
-    
-    while (istr.get(ch))
-    {
-        ostr.put(ch);
-    }
-
-    istr.close();
+    ostr << "cpp2" << " ";
+    ostr << "bigdata2";
     ostr.close();
     return 0;
 }
